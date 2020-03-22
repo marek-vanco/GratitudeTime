@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Gratitude time</string>
+    <string name="idea">idea</string>
+    <string name="author">author</string>
 </resources>
