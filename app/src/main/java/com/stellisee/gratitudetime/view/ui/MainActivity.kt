@@ -1,9 +1,10 @@
-package com.stellisee.gratitudetime
+package com.stellisee.gratitudetime.view.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import com.stellisee.gratitudetime.R
 
 class MainActivity : FragmentActivity() {
 
