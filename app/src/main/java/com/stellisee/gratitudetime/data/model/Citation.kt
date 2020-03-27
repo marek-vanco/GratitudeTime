@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Citation(
-        @PrimaryKey(autoGenerate = true) val uid: Int,
         @ColumnInfo(name = "phrase") val phrase: String?,
-        @ColumnInfo(name = "author") val author: String?
+        @ColumnInfo(name = "author") val author: String?,
+        @PrimaryKey(autoGenerate = true) val uid: Int = 0
 )
+

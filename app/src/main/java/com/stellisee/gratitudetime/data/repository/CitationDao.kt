@@ -11,4 +11,7 @@ interface CitationDao {
     @Query("SELECT * FROM Citation WHERE id = :id")
     fun getCitation(id:Int) : Citation
 
+    @Insert
+    fun insertCitation(citations: List<Citation>)
+
 }

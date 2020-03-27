@@ -2,4 +2,10 @@
     <string name="app_name">Gratitude time</string>
     <string name="idea">idea</string>
     <string name="author">author</string>
+
+    <string-array name="citations">
+        <item>It takes twenty years to build a reputation and five minutes to ruin it. If you think about that, you\'il do things differently|Warren Buffett</item>
+        <item>Death is not the greatest loss in life. The greatest loss is what dies inside us while we live.|Norman Cousins</item>
+        <item>You will never find time for anything. You must make it.|Charles Buxton</item>
+    </string-array>
 </resources>
