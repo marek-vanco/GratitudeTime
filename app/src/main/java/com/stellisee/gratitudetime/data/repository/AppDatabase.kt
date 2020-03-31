@@ -42,7 +42,7 @@ abstract class AppDatabase : RoomDatabase() {
         private fun prepopulateDb(context: Context, db: AppDatabase) {
             val citations = context.resources.getStringArray(R.array.citations)
                 .map { Citation(it.split("|")[0], it.split("|")[1]) }
-            db.citationDao().insertCitation(citations)
+            db.citationDao().insertAllCitations(citations)
         }
     }
 
