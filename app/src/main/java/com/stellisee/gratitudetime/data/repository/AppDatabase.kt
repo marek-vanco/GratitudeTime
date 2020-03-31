@@ -8,8 +8,9 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.stellisee.gratitudetime.R
 import com.stellisee.gratitudetime.data.model.Citation
+import com.stellisee.gratitudetime.utilities.DATABASE_NAME
 
-@Database(entities = [Citation::class], version = 1)
+@Database(entities = [Citation::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun citationDao(): CitationDao
@@ -27,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private fun createNewInstance(context: Context): AppDatabase?  =
-            Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "GratitudeTime.db")
+            Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DATABASE_NAME)
                 .allowMainThreadQueries()
                 .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {

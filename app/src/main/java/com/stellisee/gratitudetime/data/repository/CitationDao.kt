@@ -9,7 +9,7 @@ import com.stellisee.gratitudetime.data.model.Citation
 interface CitationDao {
 
     @Query("SELECT * FROM Citation WHERE id = :id")
-    fun getCitation(id:Int) : Citation
+    fun selectCitation(id:Int) : Citation
 
     @Insert
     fun insertCitation(citations: List<Citation>)
