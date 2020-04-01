@@ -12,9 +12,13 @@ interface CitationDao {
     @Query("SELECT * FROM Citation WHERE id = :id")
     fun selectCitation(id:Int) : Citation
 
+    @Query("SELECT * FROM Citation")
+    fun selectAllCitations(): List<Citation>
+
     @Insert(onConflict = REPLACE)
     fun insertCitation(citation: Citation)
 
     @Insert(onConflict = REPLACE)
     fun insertAllCitations(listCitation: List<Citation>)
+
 }

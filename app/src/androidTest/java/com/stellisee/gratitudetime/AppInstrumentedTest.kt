@@ -1,6 +1,7 @@
 package com.stellisee.gratitudetime
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.platform.app.InstrumentationRegistry
@@ -16,6 +17,7 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Ignore
 import java.io.IOException
 
 /**
@@ -28,11 +30,12 @@ class AppInstrumentedTest {
 
     private lateinit var citationDao: CitationDao
     private lateinit var db: AppDatabase
+    private val TAG : String = "AppInstrumentTest"
 
     @Before
     fun createDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
-        db = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
+        db = AppDatabase.getInstance(context)
         citationDao = db.citationDao()
     }
 
@@ -51,12 +54,25 @@ class AppInstrumentedTest {
 
     @Test
     @Throws(Exception::class)
-    fun writeUserAndReadInList() {
-        val citation = Citation("Citation phrase", "Author phrase",10)
+    fun readAllCitations() {
+
+        val listCitations = citationDao.selectAllCitations()
+
+        for (citation in listCitations) {
+            Log.d(TAG, citation.toString())
+        }
+        assertThat(listCitations.size , IsEqual.equalTo(5))
+    }
+
+
+    @Test
+    @Throws(Exception::class)
+    fun writeReadCitation() {
+        val citation = Citation("Citation phrase", "Author phrase",1000)
 
         citationDao.insertCitation(citation)
 
-        val citationFromDatabase = citationDao.selectCitation(10)
+        val citationFromDatabase = citationDao.selectCitation(1000)
         assertThat(citationFromDatabase, IsEqual.equalTo(citation))
     }
 }

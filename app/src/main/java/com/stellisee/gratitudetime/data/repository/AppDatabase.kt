@@ -29,7 +29,6 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun createNewInstance(context: Context): AppDatabase?  =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DATABASE_NAME)
-                .allowMainThreadQueries()
                 .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
