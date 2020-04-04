@@ -1,12 +1,9 @@
 package com.stellisee.gratitudetime.data.repository
 
 import android.content.Context
-import androidx.lifecycle.Transformations.map
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.stellisee.gratitudetime.R
 import com.stellisee.gratitudetime.data.model.Citation
 import com.stellisee.gratitudetime.utilities.DATABASE_NAME
 
@@ -29,20 +26,9 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun createNewInstance(context: Context): AppDatabase?  =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DATABASE_NAME)
-                .addCallback(object : Callback() {
-                    override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-                        Thread(Runnable { prepopulateDb(context, getInstance(context)) }).start()
-                    }
-                })
+                .createFromAsset("GratitudeTime.db")
                 .fallbackToDestructiveMigration()
                 .build()
-
-        private fun prepopulateDb(context: Context, db: AppDatabase) {
-            val citations = context.resources.getStringArray(R.array.citations)
-                .map { Citation(it.split("|")[0], it.split("|")[1]) }
-            db.citationDao().insertAllCitations(citations)
-        }
     }
 
 }

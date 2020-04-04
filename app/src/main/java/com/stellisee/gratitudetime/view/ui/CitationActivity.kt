@@ -12,12 +12,7 @@ class CitationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try {
             setContentView(R.layout.activity_citation)
-        } catch (e: Exception) {
-            Log.e(TAG, "exception=", e);
-            throw e
-        }
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
