@@ -1,9 +1,8 @@
 package com.stellisee.gratitudetime.data.repository
 
-class CitationsRepository
-     private constructor(private val citationDao: CitationDao) {
+class CitationsRepository(private val citationDao: CitationDao) {
 
-    fun getCitation(id : Int) = citationDao.selectCitation(id)
+    fun getCitation(id : Int) = citationDao.getCitation(id)
 
     companion object {
         @Volatile private var instance: CitationsRepository? = null

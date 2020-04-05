@@ -7,9 +7,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
-    sourceSets {
-        // Adds exported schema location as test app assets.
-        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     testOptions {
@@ -45,8 +48,13 @@ dependencies {
     def constraintLayout_version = "1.1.3"
     def junit_version = "4.12"
     def junitExt_version = "1.1.1"
+    def lifecycle_version = '2.2.0'
+    def dagger2_version = "2.19"
+
 
     implementation "androidx.core:core:$core_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation 'androidx.fragment:fragment-ktx:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Room
@@ -62,7 +70,6 @@ dependencies {
     // Android testing dependencies
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation "androidx.test.ext:junit:$junitExt_version"
-
     // Unit testing
     testImplementation "junit:junit:$junit_version"
     testImplementation "androidx.test.ext:junit:$junitExt_version"

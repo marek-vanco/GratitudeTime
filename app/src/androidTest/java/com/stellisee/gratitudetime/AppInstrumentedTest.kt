@@ -55,7 +55,7 @@ class AppInstrumentedTest {
     @Throws(Exception::class)
     fun readAllCitations() {
 
-        val listCitations = citationDao.selectAllCitations()
+        val listCitations = citationDao.getAllCitations()
 
         for (citation in listCitations) {
             Log.d(TAG, citation.toString())

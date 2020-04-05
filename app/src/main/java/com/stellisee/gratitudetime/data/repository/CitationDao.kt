@@ -1,8 +1,6 @@
 package com.stellisee.gratitudetime.data.repository
 
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import com.stellisee.gratitudetime.data.model.Citation
 
@@ -10,15 +8,8 @@ import com.stellisee.gratitudetime.data.model.Citation
 interface CitationDao {
 
     @Query("SELECT * FROM Citation WHERE id = :id")
-    fun selectCitation(id:Int) : Citation
+    fun getCitation(id:Int) : Citation
 
     @Query("SELECT * FROM Citation")
-    fun selectAllCitations(): List<Citation>
-
-    @Insert(onConflict = REPLACE)
-    fun insertCitation(citation: Citation)
-
-    @Insert(onConflict = REPLACE)
-    fun insertAllCitations(listCitation: List<Citation>)
-
+    fun getAllCitations(): List<Citation>
 }
