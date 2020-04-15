@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/citation_fragment"
         android:name="com.stellisee.gratitudetime.view.ui.CitationFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_citation">
-    </fragment>
+    </androidx.fragment.app.FragmentContainerView>
 </FrameLayout>

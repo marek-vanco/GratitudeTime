@@ -1,4 +1,4 @@
-package com.stellisee.gratitudetime.view.ui
+package com.stellisee.gratitudetime.view.ui.citation
 
 import android.content.res.Configuration
 import android.os.Bundle

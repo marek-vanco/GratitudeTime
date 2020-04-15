@@ -1,15 +1,9 @@
 package com.stellisee.gratitudetime.data.repository
 
-class CitationsRepository(private val citationDao: CitationDao) {
+import androidx.lifecycle.LiveData
+import com.stellisee.gratitudetime.data.db.model.Citation
 
-    fun getCitation(id : Int) = citationDao.getCitation(id)
+interface CitationsRepository {
 
-    companion object {
-        @Volatile private var instance: CitationsRepository? = null
-
-        fun getInstance(citationDao: CitationDao) =
-            instance ?: synchronized(this) {
-                instance ?: CitationsRepository(citationDao).also { instance = it }
-            }
-    }
+    suspend fun getCitation(id:Int) : LiveData<Citation>
 }

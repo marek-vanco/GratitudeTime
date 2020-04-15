@@ -4,10 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.stellisee.gratitudetime.data.repository.CitationsRepository
 
-@Suppress("UNCHECKED_CAST")
-class CitationViewModelFactory(private val repository: CitationsRepository) : ViewModelProvider.NewInstanceFactory() {
+class CitationViewModelFactory(private val citationsRepository: CitationsRepository) : ViewModelProvider.NewInstanceFactory() {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return CitationViewModel(repository) as T
+        return CitationViewModel(citationsRepository) as T
     }
 }

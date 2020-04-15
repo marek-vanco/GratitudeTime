@@ -1,4 +1,4 @@
-package com.stellisee.gratitudetime.data.model
+package com.stellisee.gratitudetime.data.db.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
