@@ -21,7 +21,8 @@ class CitationFragment() : Fragment(), KodeinAware {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val fragmentCitationBindging = FragmentCitationBinding.inflate(inflater, container, false)
-        fragmentCitationBindging.textViewAuthor.setText("author1")
+        fragmentCitationBindging.textViewPhrase.text = "phrase1"
+        fragmentCitationBindging.textViewAuthor.text = "auhor1"
         return fragmentCitationBindging.root
     }
 

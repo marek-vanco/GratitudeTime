@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="38d32824-3a0a-4885-a787-126b0ac6ef22">
-        <schema name="main" object-types="view, dataset trigger, table, index, constraint, column" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="38d32824-3a0a-4885-a787-126b0ac6ef22">
@@ -35,12 +31,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="38d32824-3a0a-4885-a787-126b0ac6ef22" object-ref="schemas/main/tables/Citation" />
-      <object connection-id="38d32824-3a0a-4885-a787-126b0ac6ef22" object-ref="schemas/main/tables/room_master_table" />
-      <object connection-id="38d32824-3a0a-4885-a787-126b0ac6ef22" object-ref="schemas/main/tables/sqlite_sequence" />
-      <object connection-id="38d32824-3a0a-4885-a787-126b0ac6ef22" object-ref="schemas/main/tables/android_metadata" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="38d32824-3a0a-4885-a787-126b0ac6ef22" />
@@ -292,6 +283,8 @@
           <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JSON" enabled="true" />
+          <content-type name="JSON5" enabled="true" />
           <content-type name="Groovy" enabled="true" />
           <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
