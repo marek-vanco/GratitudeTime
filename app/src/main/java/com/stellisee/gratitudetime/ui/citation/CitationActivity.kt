@@ -1,4 +1,4 @@
-package com.stellisee.gratitudetime.view.ui.citation
+package com.stellisee.gratitudetime.ui.citation
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.stellisee.gratitudetime.R
 
 class CitationActivity : AppCompatActivity() {
-
-    private val TAG: String = "CitationActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="citationViewModel"
+            name="viewModel"
             type="com.stellisee.gratitudetime.viewmodel.CitationViewModel" />
     </data>
 
@@ -29,7 +29,7 @@
             android:paddingBottom="30dp"
             android:textSize="30sp"
             android:textStyle="italic"
-            android:text="@{citationViewModel.phrase}"
+            android:text="@{viewModel.phrase}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
             android:paddingBottom="20dp"
             android:textSize="18sp"
             android:textStyle="italic"
-            android:text="@{citationViewModel.author}"
+            android:text="@{viewModel.author}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

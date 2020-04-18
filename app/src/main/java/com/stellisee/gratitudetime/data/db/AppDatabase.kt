@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.stellisee.gratitudetime.data.db.model.Citation
-import com.stellisee.gratitudetime.utilities.DATABASE_NAME
+import com.stellisee.gratitudetime.internal.DATABASE_NAME
 
 @Database(entities = [Citation::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
