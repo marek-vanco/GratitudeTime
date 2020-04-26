@@ -9,8 +9,9 @@ class CitationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val activityCitationBinding = ActivityCitationBinding.inflate(layoutInflater)
-        val view = activityCitationBinding.root
+
+        val viewBinding = ActivityCitationBinding.inflate(layoutInflater)
+        val view = viewBinding.root
         setContentView(view)
     }
 

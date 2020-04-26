@@ -1,9 +1,7 @@
 package com.stellisee.gratitudetime
 
 import android.app.Application
-import androidx.room.Database
 import com.stellisee.gratitudetime.data.db.AppDatabase
-import com.stellisee.gratitudetime.data.db.CitationDao
 import com.stellisee.gratitudetime.data.repository.CitationsRepository
 import com.stellisee.gratitudetime.data.repository.CitationsRepositoryImpl
 import com.stellisee.gratitudetime.viewmodel.CitationViewModelFactory

@@ -5,9 +5,10 @@
     >
 
     <data>
+        <import type = "com.stellisee.gratitudetime.viewmodel.CitationViewModel"/>
         <variable
-            name="viewModel"
-            type="com.stellisee.gratitudetime.viewmodel.CitationViewModel" />
+            name="viewmodel"
+            type="CitationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +17,7 @@
         tools:context=".CitationFragment">
 
         <TextView
-            android:id="@+id/textView_phrase"
+            android:id="@+id/textview_phrase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -29,7 +30,8 @@
             android:paddingBottom="30dp"
             android:textSize="30sp"
             android:textStyle="italic"
-            android:text="phrase"
+            android:text="@{viewmodel.citation.phrase}"
+            tools:text="@tools:sample/lorem"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +40,7 @@
             />
 
         <TextView
-            android:id="@+id/textView_author"
+            android:id="@+id/textview_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -51,11 +53,12 @@
             android:paddingBottom="20dp"
             android:textSize="18sp"
             android:textStyle="italic"
-            android:text="author"
+            android:text="@{viewmodel.citation.author}"
+            tools:text="@tools:sample/full_names"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView_phrase"
+            app:layout_constraintTop_toBottomOf="@id/textview_phrase"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

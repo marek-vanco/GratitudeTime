@@ -29,7 +29,10 @@ class CitationsRepositoryImpl(private val citationDao: CitationDao) : CitationsR
             instance ?: synchronized(this) {
                 instance ?: CitationsRepositoryImpl(citationDao).also { instance = it }
             }
+
+        @JvmStatic
+        fun destroyInstance() {
+            instance = null
+        }
     }
-
-
 }

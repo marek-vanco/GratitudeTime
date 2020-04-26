@@ -1,19 +1,16 @@
 package com.stellisee.gratitudetime
 
 import android.content.Context
-import android.util.Log
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.stellisee.gratitudetime.data.db.AppDatabase
 import com.stellisee.gratitudetime.data.db.CitationDao
-import org.hamcrest.core.IsEqual
+import com.stellisee.gratitudetime.data.db.model.Citation
 import org.junit.After
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertThat
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
@@ -51,16 +48,16 @@ class AppInstrumentedTest {
     }
 
     @Test
-    @Ignore
-    @Throws(Exception::class)
-    fun readAllCitations() {
+    fun CitationsRepositoryImplTest() {
 
-        val listCitations = citationDao.getAllCitations()
 
-        for (citation in listCitations) {
-            Log.d(TAG, citation.toString())
-        }
-        assertThat(listCitations.size , IsEqual.equalTo(3))
+
+        val citation = Citation("Test_phrase", "Test_author", 0)
+        citationDao.insert(citation);
+        val citationReturned = citationDao.getCitation(0)
+        assertEquals("Test_phrase", citationReturned.value?.phrase)
+        assertEquals("Test_authoir", citationReturned.value?.author.toString())
     }
+
 }
 
