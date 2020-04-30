@@ -7,7 +7,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.stellisee.gratitudetime.data.db.AppDatabase
 import com.stellisee.gratitudetime.data.db.CitationDao
-import com.stellisee.gratitudetime.data.db.model.Citation
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -46,18 +45,5 @@ class AppInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.stellisee.gratitudetime.debug", appContext.packageName)
     }
-
-    @Test
-    fun CitationsRepositoryImplTest() {
-
-
-
-        val citation = Citation("Test_phrase", "Test_author", 0)
-        citationDao.insert(citation);
-        val citationReturned = citationDao.getCitation(0)
-        assertEquals("Test_phrase", citationReturned.value?.phrase)
-        assertEquals("Test_authoir", citationReturned.value?.author.toString())
-    }
-
 }
 
