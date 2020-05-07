@@ -29,7 +29,8 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, DATABASE_NAME)
-                .createFromAsset(DATABASE_NAME)
+                .createFromAsset("databases/GratitudeTime.db")
+                .fallbackToDestructiveMigration()
                 .build()
     }
 }
