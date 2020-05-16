@@ -16,7 +16,6 @@ import org.kodein.di.generic.singleton
 
 class GratitudeTimeApplication : Application(), KodeinAware {
 
-
     @InternalCoroutinesApi
     override val kodein = Kodein.lazy {
         import(androidCoreModule(this@GratitudeTimeApplication))

@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class CitationsRepositoryImpl(private val citationDao: CitationDao) : CitationsRepository {
 
@@ -22,17 +23,10 @@ class CitationsRepositoryImpl(private val citationDao: CitationDao) : CitationsR
         }
     }
 
-    companion object {
-        @Volatile private var instance: CitationsRepositoryImpl? = null
-
-        fun getInstance(citationDao: CitationDao) =
-            instance ?: synchronized(this) {
-                instance ?: CitationsRepositoryImpl(citationDao).also { instance = it }
-            }
-
-        @JvmStatic
-        fun destroyInstance() {
-            instance = null
+    override suspend fun insertCitation(citation: Citation) {
+        withContext(Dispatchers.IO) {
+            citationDao.insertCitation(citation)
+            Timber.d("insert citation in dao")
         }
     }
 }

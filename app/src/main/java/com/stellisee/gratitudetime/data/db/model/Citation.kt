@@ -8,6 +8,6 @@ import androidx.room.PrimaryKey
 data class Citation(
         @ColumnInfo(name = "phrase") val phrase: String,
         @ColumnInfo(name = "author") val author: String,
-        @PrimaryKey(autoGenerate = true) val id: Int = 1
+        @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
 
