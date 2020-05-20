@@ -19,25 +19,25 @@ class CitationFragment() : Fragment(), KodeinAware {
 
     override val kodein by closestKodein()
     private val citationViewModelFactory by instance<CitationViewModelFactory>()
-    private lateinit var fragmentCitationBinding : FragmentCitationBinding
+    private lateinit var binding : FragmentCitationBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // databinding
-        fragmentCitationBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_citation, container, false )
-        fragmentCitationBinding.lifecycleOwner = this
-        return fragmentCitationBinding.root
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_citation, container, false)
+        binding.lifecycleOwner = this.viewLifecycleOwner
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         val citationViewModel = citationViewModelFactory.create(CitationViewModel::class.java)
-        fragmentCitationBinding.viewmodel = citationViewModel
+        binding.viewmodel = citationViewModel
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        fragmentCitationBinding.viewmodel?.fetchCitation()
+        binding.viewmodel?.fetchCitation()
     }
 }

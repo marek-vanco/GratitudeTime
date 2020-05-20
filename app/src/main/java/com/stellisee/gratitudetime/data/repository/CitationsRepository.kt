@@ -5,7 +5,5 @@ import com.stellisee.gratitudetime.data.db.model.Citation
 
 interface CitationsRepository {
 
-    suspend fun getCitation(id:Int) : LiveData<Citation>
-
-    suspend fun insertCitation(citation: Citation)
+    fun getCitation(id:Int) : LiveData<Citation>
 }
